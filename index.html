@@ -29,7 +29,7 @@
       </div>
     </header>
     <main>
-      <section class="p-10">
+      <section class="p-10 flex space-x-7">
         <div class="grid grid-cols-3 gap-5">
           <!-- 1st Card -->
           <div
@@ -212,22 +212,28 @@
             </div>
           </div>
         </div>
-        <div>
+        <div class="space-y-5">
           <!-- selection card -->
-          <div class="bg-black">
+          <div class="bg-black flex flex-col justify-center items-center">
             <h2 class="text-3xl font-bold">Selected-V</h2>
           </div>
           <!-- Budget Calculation card -->
-          <div class="bg-black">
+          <div
+            class="bg-black flex flex-col justify-center items-center space-y-3"
+          >
             <h3 class="text-3xl font-bold">Budget</h3>
-            <div>
+            <div class="w-full flex justify-between items-center">
               <label for="">Per Player</label>
-              <input type="number" />
+              <input class="w-28" type="number" />
             </div>
             <button>Calculate</button>
             <p>Player Expenses $<span>00</span></p>
-            <div><label for="">Manager</label><input type="number" /></div>
-            <div><label for="">Coach</label><input type="number" /></div>
+            <div class="w-full flex justify-between items-center">
+              <label for="">Manager</label><input class="w-28" type="number" />
+            </div>
+            <div class="w-full flex justify-between items-center">
+              <label for="">Coach</label><input class="w-28" type="number" />
+            </div>
             <button>Calculate Total</button>
             <div class="flex justify-between items-center">
               <p class="font-semibold">Total</p>
