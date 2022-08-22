@@ -3,10 +3,20 @@ const selectVDiv = document.getElementById("select-v");
 const perPlayerInputField = document.getElementById("per-player-input-field");
 const btnCalculate = document.getElementById("btn-calculate");
 const playerExpensesValue = document.getElementById("player-expenses-value");
-const MangerInputField = document.getElementById("manager-input-field");
+const managerInputField = document.getElementById("manager-input-field");
 const coachInputField = document.getElementById("coach-input-field");
 const btnCalculateTotal = document.getElementById("btn-calculate-total");
 const totalValue = document.getElementById("total-value");
+
+// common functions
+function getInputFieldNumValue(inputField) {
+  const numberValue = parseFloat(parseFloat(inputField.value).toFixed(2));
+  return numberValue;
+}
+
+function rewriteInnerText(elementName, overwriteValue) {
+  elementName.innerText = overwriteValue;
+}
 
 function clickBtnAppendPlayerName(btnId, PlayerNameId) {
   const selectButton = document.getElementById(btnId);
@@ -36,6 +46,21 @@ clickBtnAppendPlayerName("btn-select-mbappe", "name-mbappe");
 clickBtnAppendPlayerName("btn-select-vitor", "name-vitor");
 clickBtnAppendPlayerName("btn-select-ramos", "name-ramos");
 clickBtnAppendPlayerName("btn-select-sanches", "name-sanches");
+
+btnCalculate.addEventListener("click", function () {
+  const perPlayerCost = getInputFieldNumValue(perPlayerInputField);
+  const totalPlayerExpenses = perPlayerCost * selectVDiv.childElementCount;
+  rewriteInnerText(playerExpensesValue, totalPlayerExpenses);
+});
+
+btnCalculateTotal.addEventListener("click", function () {
+  const currentPlayerExpeses = parseFloat(playerExpensesValue.innerText);
+  const managerCost = getInputFieldNumValue(managerInputField);
+  const coachCost = getInputFieldNumValue(coachInputField);
+  const totalExpensesCalculation =
+    currentPlayerExpeses + managerCost + coachCost;
+  rewriteInnerText(totalValue, totalExpensesCalculation);
+});
 
 // clickBtnAppendPlayerName("btn-select-messi", "name-messi");
 // clickBtnAppendPlayerName("btn-select-messi", "name-messi");
