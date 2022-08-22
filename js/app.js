@@ -48,24 +48,30 @@ clickBtnAppendPlayerName("btn-select-ramos", "name-ramos");
 clickBtnAppendPlayerName("btn-select-sanches", "name-sanches");
 
 btnCalculate.addEventListener("click", function () {
-  const perPlayerCost = getInputFieldNumValue(perPlayerInputField);
+  let perPlayerCost = getInputFieldNumValue(perPlayerInputField);
+  if (isNaN(perPlayerCost) === true) {
+    alert("Provide value for per player input field ");
+  }
   const totalPlayerExpenses = perPlayerCost * selectVDiv.childElementCount;
   rewriteInnerText(playerExpensesValue, totalPlayerExpenses);
+  perPlayerInputField.value = "";
 });
 
 btnCalculateTotal.addEventListener("click", function () {
-  const currentPlayerExpeses = parseFloat(playerExpensesValue.innerText);
-  const managerCost = getInputFieldNumValue(managerInputField);
-  const coachCost = getInputFieldNumValue(coachInputField);
+  let currentPlayerExpeses = parseFloat(playerExpensesValue.innerText);
+  let managerCost = getInputFieldNumValue(managerInputField);
+  let coachCost = getInputFieldNumValue(coachInputField);
+
+  if (isNaN(managerCost) === true) {
+    alert("Provide value for manager input field ");
+  }
+  if (isNaN(coachCost) === true) {
+    alert("Provide value for coach input field ");
+  }
+
   const totalExpensesCalculation =
     currentPlayerExpeses + managerCost + coachCost;
   rewriteInnerText(totalValue, totalExpensesCalculation);
+  managerInputField.value = "";
+  coachInputField.value = "";
 });
-
-// clickBtnAppendPlayerName("btn-select-messi", "name-messi");
-// clickBtnAppendPlayerName("btn-select-messi", "name-messi");
-// clickBtnAppendPlayerName("btn-select-messi", "name-messi");
-// clickBtnAppendPlayerName("btn-select-messi", "name-messi");
-// clickBtnAppendPlayerName("btn-select-messi", "name-messi");
-// clickBtnAppendPlayerName("btn-select-messi", "name-messi");
-// clickBtnAppendPlayerName("btn-select-messi", "name-messi");

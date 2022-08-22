@@ -18,13 +18,13 @@
     <header class="flex justify-center items-center">
       <div
         id="header-div"
-        class="flex flex-col justify-center items-center w-3/4 py-40"
+        class="flex flex-col justify-center items-center w-3/4 lg:py-36 py-20"
       >
-        <h1 class="text-center font-bold text-5xl mb-5">
+        <h1 class="text-center font-bold text-5xl text-blue-300 mb-10">
           Welcome to Premiere League Auction
         </h1>
         <div class="w-3/4">
-          <p class="text-center">
+          <p class="text-center text-gray-200">
             The Premier League, is the top level of the men's English football
             league system. Contested by 20 clubs, it operates on a system of
             promotion and relegation with the English Football League. Seasons
@@ -34,11 +34,13 @@
       </div>
     </header>
     <main>
-      <section class="p-10 flex justify-center space-x-7">
+      <section
+        class="p-10 flex flex-col-reverse md:flex-row justify-center items-center md:items-start md:space-x-7"
+      >
         <!-- -----------------
           player cards grid
         ------------------ -->
-        <div class="grid grid-cols-3 gap-5">
+        <div class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
           <!-- 1st Card -->
           <div class="border-2 border-solid border-slate-500 w-fit">
             <div class="flex justify-center items-center">
@@ -168,12 +170,16 @@
             </div>
           </div>
         </div>
-        <div class="space-y-5 w-1/5">
+        <div class="space-y-5 xl:w-1/5 lg:w-4/12 md:w-5/12 w-full mb-12">
           <!-- --------------
             selection card
           --------------- -->
-          <div class="bg-black flex flex-col justify-center items-center py-7">
-            <h2 class="text-3xl font-bold text-center">My Selection</h2>
+          <div
+            class="bg-black flex flex-col justify-center items-center py-7 mb-7"
+          >
+            <h2 class="text-3xl font-bold text-center text-red-500">
+              Selected-V
+            </h2>
             <div id="select-v" class="w-full p-4"></div>
           </div>
 
@@ -183,7 +189,7 @@
           <div
             class="bg-black flex flex-col justify-center items-center space-y-3 py-7 px-4"
           >
-            <h3 class="text-3xl font-bold">Budget</h3>
+            <h3 class="text-3xl font-bold mb-7 text-red-500">Budget</h3>
             <div class="w-full flex justify-between items-center">
               <label for="">Per Player</label>
               <input
