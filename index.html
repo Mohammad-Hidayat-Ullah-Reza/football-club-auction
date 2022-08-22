@@ -30,6 +30,9 @@
     </header>
     <main>
       <section class="p-10 flex justify-center space-x-7">
+        <!-- -----------------
+          player cards grid
+        ------------------ -->
         <div class="grid grid-cols-3 gap-5">
           <!-- 1st Card -->
           <div class="border-2 border-solid border-slate-500 w-fit">
@@ -159,122 +162,19 @@
               </button>
             </div>
           </div>
-          <!-- 7th Card -->
-          <div class="border-2 border-solid border-slate-500 w-fit">
-            <div class="flex justify-center items-center">
-              <img src="media/player-images/messi.jpg" alt="" />
-            </div>
-            <div
-              class="w-full p-3 space-y-3 flex flex-col justify-center items-center"
-            >
-              <h3 id="name-messi" class="text-2xl font-bold">Lionel Messi</h3>
-              <p>36 Goals | 120 Assist</p>
-              <button
-                id="btn-select-messi"
-                class="w-full bg-blue-800 hover:bg-blue-700 py-2 font-bold"
-              >
-                SELECT
-              </button>
-            </div>
-          </div>
-          <!-- 8th Card -->
-          <div class="border-2 border-solid border-slate-500 w-fit">
-            <div class="flex justify-center items-center">
-              <img src="media/player-images/messi.jpg" alt="" />
-            </div>
-            <div
-              class="w-full p-3 space-y-3 flex flex-col justify-center items-center"
-            >
-              <h3 id="name-messi" class="text-2xl font-bold">Lionel Messi</h3>
-              <p>36 Goals | 120 Assist</p>
-              <button
-                id="btn-select-messi"
-                class="w-full bg-blue-800 hover:bg-blue-700 py-2 font-bold"
-              >
-                SELECT
-              </button>
-            </div>
-          </div>
-          <!-- 9th Card -->
-          <div class="border-2 border-solid border-slate-500 w-fit">
-            <div class="flex justify-center items-center">
-              <img src="media/player-images/messi.jpg" alt="" />
-            </div>
-            <div
-              class="w-full p-3 space-y-3 flex flex-col justify-center items-center"
-            >
-              <h3 id="name-messi" class="text-2xl font-bold">Lionel Messi</h3>
-              <p>36 Goals | 120 Assist</p>
-              <button
-                id="btn-select-messi"
-                class="w-full bg-blue-800 hover:bg-blue-700 py-2 font-bold"
-              >
-                SELECT
-              </button>
-            </div>
-          </div>
-          <!-- 1oth Card -->
-          <div class="border-2 border-solid border-slate-500 w-fit">
-            <div class="flex justify-center items-center">
-              <img src="media/player-images/messi.jpg" alt="" />
-            </div>
-            <div
-              class="w-full p-3 space-y-3 flex flex-col justify-center items-center"
-            >
-              <h3 id="name-messi" class="text-2xl font-bold">Lionel Messi</h3>
-              <p>36 Goals | 120 Assist</p>
-              <button
-                id="btn-select-messi"
-                class="w-full bg-blue-800 hover:bg-blue-700 py-2 font-bold"
-              >
-                SELECT
-              </button>
-            </div>
-          </div>
-          <!-- 11th Card -->
-          <div class="border-2 border-solid border-slate-500 w-fit">
-            <div class="flex justify-center items-center">
-              <img src="media/player-images/messi.jpg" alt="" />
-            </div>
-            <div
-              class="w-full p-3 space-y-3 flex flex-col justify-center items-center"
-            >
-              <h3 id="name-messi" class="text-2xl font-bold">Lionel Messi</h3>
-              <p>36 Goals | 120 Assist</p>
-              <button
-                id="btn-select-messi"
-                class="w-full bg-blue-800 hover:bg-blue-700 py-2 font-bold"
-              >
-                SELECT
-              </button>
-            </div>
-          </div>
-          <!-- 12th Card -->
-          <div class="border-2 border-solid border-slate-500 w-fit">
-            <div class="flex justify-center items-center">
-              <img src="media/player-images/messi.jpg" alt="" />
-            </div>
-            <div
-              class="w-full p-3 space-y-3 flex flex-col justify-center items-center"
-            >
-              <h3 id="name-messi" class="text-2xl font-bold">Lionel Messi</h3>
-              <p>36 Goals | 120 Assist</p>
-              <button
-                id="btn-select-messi"
-                class="w-full bg-blue-800 hover:bg-blue-700 py-2 font-bold"
-              >
-                SELECT
-              </button>
-            </div>
-          </div>
         </div>
         <div class="space-y-5 w-1/5">
-          <!-- selection card -->
+          <!-- --------------
+            selection card
+          --------------- -->
           <div class="bg-black flex flex-col justify-center items-center py-7">
             <h2 class="text-3xl font-bold text-center">Selected-V</h2>
             <div id="select-v" class="w-full p-4"></div>
           </div>
-          <!-- Budget Calculation card -->
+
+          <!-- ----------------------
+            Budget Calculation card
+          ------------------------ -->
           <div
             class="bg-black flex flex-col justify-center items-center space-y-3 py-7 px-4"
           >
@@ -282,17 +182,25 @@
             <div class="w-full flex justify-between items-center">
               <label for="">Per Player</label>
               <input
+                id="per-player-input-field"
                 class="w-2/5 bg-transparent border-2 border-solid border-slate-500"
                 type="number"
               />
             </div>
-            <button class="w-full bg-blue-800 py-2 font-bold">Calculate</button>
+            <button
+              id="btn-calculate"
+              class="w-full bg-blue-800 py-2 font-bold"
+            >
+              Calculate
+            </button>
             <p class="w-full flex justify-between items-center">
-              Player Expenses <span>$<span>00</span></span>
+              Player Expenses
+              <span>$<span id="player-expenses-value">00</span></span>
             </p>
             <div class="w-full flex justify-between items-center">
               <label for="">Manager</label
               ><input
+                id="manager-input-field"
                 class="w-2/5 bg-transparent border-2 border-solid border-slate-500"
                 type="number"
               />
@@ -300,16 +208,22 @@
             <div class="w-full flex justify-between items-center">
               <label for="">Coach</label
               ><input
+                id="coach-input-field"
                 class="w-2/5 bg-transparent border-2 border-solid border-slate-500"
                 type="number"
               />
             </div>
-            <button class="w-full bg-blue-800 py-2 font-bold">
+            <button
+              id="btn-calculate-total"
+              class="w-full bg-blue-800 py-2 font-bold"
+            >
               Calculate Total
             </button>
             <div class="w-full flex justify-between items-center">
               <p class="font-semibold">Total</p>
-              <span class="text-red-500 font-semibold">00</span>
+              <span id="total-value" class="text-red-500 font-semibold"
+                >00</span
+              >
             </div>
           </div>
         </div>
